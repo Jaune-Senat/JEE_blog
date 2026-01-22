@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 
-import com.blog.dao.DatabaseConnexion;
+import com.blog.dao.DatabaseConnection;
 
 
 /**
@@ -25,12 +25,12 @@ public class TestConnexionServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         try {
-            Connection conn = DatabaseConnexion.getConnection();
+            Connection conn = DatabaseConnection.getConnection();
             
             if (conn != null && !conn.isClosed()) {
                 out.println("<h1 style='color:green'>✅ Connexion à MySQL réussie!</h1>");
                 out.println("<p>Base de données: test-etu</p>");
-                DatabaseConnexion.closeConnection(conn);
+                DatabaseConnection.closeConnection(conn);
             } else {
                 out.println("<h1 style='color:red'>❌ Échec de la connexion</h1>");
             }

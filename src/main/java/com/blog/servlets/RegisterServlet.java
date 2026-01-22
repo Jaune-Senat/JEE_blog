@@ -9,6 +9,7 @@ import java.io.IOException;
  
 import com.blog.dao.UserDAO;
 import com.blog.models.User;
+import com.blog.passwordHash.PasswordUtil;
  
 /**
 * Servlet implementation class RegisterServlet
@@ -44,8 +45,9 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
         
+        String hashedPassword = PasswordUtil.hashPassword(password);
        
-        User user = new User(nom, prenom, username, email, password, role);
+        User user = new User(nom, prenom, username, email, hashedPassword, role);
         
         
         

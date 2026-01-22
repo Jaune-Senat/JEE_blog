@@ -14,6 +14,10 @@ public class User {
 		private Timestamp created_at;
 		
 		
+		public User() {
+			
+		}
+		
 		public User(String nom, String prenom, String username, String email, String password, String role) 
 		{
 			super();
@@ -31,9 +35,9 @@ public class User {
 			return id;
 		}
 
-//		public void setId(int id) {
-//			this.id = id;
-//		}
+		public void setId(int id) {
+			this.id = id;
+		}
 
 		public String getNom() {
 			return nom;
@@ -87,8 +91,8 @@ public class User {
 			return created_at;
 		}
 
-//		public void setCreated_at(Date created_at) {
-//			this.created_at = created_at;
-//		}	
+		public void setCreated_at(Timestamp created_at) {
+			this.created_at = created_at;
+		}	
 		
 }
